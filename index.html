@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>استوديو التصميم - نصمم مواقعك بإبداع</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">استوديو<span>التصميم</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#work">أعمالنا</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-sticky">
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+      <div class="hero-content" dir="ltr">
+        <h1>We build <span class="highlight">websites</span> for <span class="highlight">ambitious</span> brands.</h1>
+        <p>Professional websites for growing businesses — strategy, design, development and SEO, all from one team.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="hero-btn-primary"><span class="btn-label">Start a project</span> <span aria-hidden="true">→</span></a>
+          <a href="#work" class="hero-btn-secondary"><span class="dot"></span> Selected work</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span><strong>5.0</strong> <span class="stat-label">Google · 21 reviews</span></span></div>
+          <span class="stat-divider"></span>
+          <div class="hero-stat"><span><strong>+50</strong> <span class="stat-label">Projects delivered</span></span></div>
+          <span class="stat-divider"></span>
+          <div class="hero-stat"><span><strong>100</strong> <span class="stat-label">Pagespeed score</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="services-sticky">
+      <canvas id="servicesCanvas" class="services-canvas"></canvas>
+
+      <div class="services-caption" id="servicesCaption" dir="ltr">
+        <span class="caption-part caption-intro" id="captionIntro">We can change your website</span>
+        <span class="caption-part caption-from" id="captionFrom">from this</span>
+        <span class="caption-part caption-to" id="captionTo">to this.</span>
+        <span class="caption-cursor"></span>
+      </div>
+
+      <div class="site-mock site-mock-bad" id="siteMockBad">
+        <div class="mock-browser-bar"><span></span><span></span><span></span></div>
+        <div class="mock-bad-body">
+          <div class="mock-bad-title">★☆ WELCOME 2 MY SITE ☆★</div>
+          <div class="mock-bad-nav">Home | About | Links | GuestBook | Contact</div>
+          <div class="mock-bad-banner">🚧 UNDER CONSTRUCTION 🚧</div>
+          <div class="mock-bad-counter">Visitors: 003428</div>
+        </div>
+      </div>
+
+      <div class="site-mock site-mock-good" id="siteMockGood">
+        <video id="goodSiteVideo" class="mock-good-video" data-src="dragon_hq.mp4" muted loop playsinline preload="none"></video>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="portfolio">
+    <div class="portfolio-sticky">
+      <img src="3.png" alt="" class="portfolio-image" />
+
+      <div class="services-callout portfolio-callout" id="portfolioCallout" dir="ltr">
+        <span class="callout-label">SERVICES</span>
+        <svg class="callout-svg" width="200" height="110" viewBox="0 0 200 110" preserveAspectRatio="none">
+          <path pathLength="1" d="M180 42 L140 18 H0" />
+        </svg>
+      </div>
+
+      <div class="timeline" id="timeline" dir="ltr">
+        <div class="tl-item" data-step="0">
+          <div class="feature-visual feature-visual-design">
+            <img class="feature-img" src="icon-design.jpg" alt="" loading="lazy" />
+            <span class="status-dot"></span>
+            <span class="mini-label">Designing</span>
+          </div>
+          <div class="feature-info">
+            <h3>Design</h3>
+            <p>We turn your ideas into interfaces that feel effortless to use.</p>
+          </div>
+        </div>
+        <div class="tl-connector"></div>
+        <div class="tl-item" data-step="1">
+          <div class="feature-visual feature-visual-build">
+            <img class="feature-img" src="icon-build.jpg" alt="" loading="lazy" />
+            <span class="status-dot"></span>
+            <span class="mini-label">Building</span>
+          </div>
+          <div class="feature-info">
+            <h3>Build</h3>
+            <p>Our engineers ship fast, clean, and reliable code.</p>
+          </div>
+        </div>
+        <div class="tl-connector"></div>
+        <div class="tl-item" data-step="2">
+          <div class="feature-visual feature-visual-publish">
+            <img class="feature-img" src="icon-publish.jpg" alt="" loading="lazy" />
+            <span class="status-dot"></span>
+            <span class="mini-label">Launching</span>
+          </div>
+          <div class="feature-info">
+            <h3>Publish</h3>
+            <p>We launch your site with zero downtime and full QA.</p>
+          </div>
+        </div>
+        <div class="tl-connector"></div>
+        <div class="tl-item" data-step="3">
+          <div class="feature-visual feature-visual-maintenance">
+            <img class="feature-img" src="icon-maintenance.jpg" alt="" loading="lazy" />
+            <span class="status-dot"></span>
+            <span class="mini-label">Monitoring</span>
+          </div>
+          <div class="feature-info">
+            <h3>Maintenance</h3>
+            <p>We keep everything running smooth after launch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">من نحن</h2>
+    <p class="about-text">
+      استوديو التصميم فريق متخصص في تصميم وتطوير المواقع الإلكترونية منذ سنوات.
+      نؤمن بأن كل فكرة تستحق موقعاً يعبر عنها بأفضل شكل ممكن، ونعمل بشغف لتحقيق ذلك لعملائنا.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">تواصل معنا</h2>
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="الاسم الكامل" required />
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+      <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+      <button type="submit" class="btn-primary">إرسال الرسالة</button>
+      <p id="formStatus" class="form-status"></p>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 استوديو التصميم. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
