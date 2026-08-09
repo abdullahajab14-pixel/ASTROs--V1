@@ -14,7 +14,7 @@ let currentFrameIndex = -1;
 
 function frameSrc(index) {
   const num = String(index + 1).padStart(3, "0");
-  return `hero/ezgif-frame-${num}.png`;
+  return `hero_hq/ezgif-frame-${num}.png`;
 }
 
 const frameCache = new Map();
