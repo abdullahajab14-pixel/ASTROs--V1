@@ -14,7 +14,7 @@ let currentFrameIndex = -1;
 
 function frameSrc(index) {
   const num = String(index + 1).padStart(3, "0");
-  return `hero/ezgif-frame-${num}.png`;
+  return `hero_hq/ezgif-frame-${num}.png`;
 }
 
 const frameCache = new Map();
@@ -415,7 +415,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
-contactForm.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
@@ -428,7 +428,31 @@ contactForm.addEventListener("submit", (e) => {
     return;
   }
 
-  formStatus.textContent = `شكراً لك ${name}، تم استلام رسالتك وسنتواصل معك قريباً!`;
-  formStatus.className = "form-status success";
-  contactForm.reset();
+  const submitBtn = contactForm.querySelector("button[type=submit]");
+  submitBtn.disabled = true;
+  formStatus.textContent = "جاري إرسال رسالتك...";
+  formStatus.className = "form-status";
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+    const data = await response.json();
+
+    if (response.ok && data.ok) {
+      formStatus.textContent = `شكراً لك ${name}، تم استلام طلبك بنجاح وسنتواصل معك قريباً!`;
+      formStatus.className = "form-status success";
+      contactForm.reset();
+    } else {
+      formStatus.textContent = data.error || "حدث خطأ، حاول مرة أخرى لاحقاً.";
+      formStatus.className = "form-status error";
+    }
+  } catch (err) {
+    formStatus.textContent = "تعذر الاتصال بالخادم، حاول مرة أخرى لاحقاً.";
+    formStatus.className = "form-status error";
+  } finally {
+    submitBtn.disabled = false;
+  }
 });
