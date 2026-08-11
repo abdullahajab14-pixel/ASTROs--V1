@@ -28,7 +28,7 @@ function getFrame(index) {
   return frameCache.get(snapped);
 }
 
-// نجهز أول كم فريم بالخلفية بصمت فور ما تفتح الصفحة، عشان لو سكرولت بسرعة من البداية ما يصير تقطيع
+// نجهز أول كم فريم بالخلفية بصمت فور ما تفتح الصفحة، عشان لو سيكرولت بسرعة من البداية ما يصير تقطيع
 const HERO_PRELOAD_COUNT = 10;
 for (let i = 0; i < HERO_PRELOAD_COUNT; i++) {
   getFrame(i);
